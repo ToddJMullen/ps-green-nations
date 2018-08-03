@@ -8,7 +8,7 @@ export interface IconFiles{
 }
 
 export interface FrameworkConfigSettings{
-  showStatusBarBreakpoint? : boolean
+  showStatusBarBreakpoint? : number
   ,showLanguageSelector?   : boolean
   ,showUserControls?       : boolean
   ,showStatusBar?          : boolean
