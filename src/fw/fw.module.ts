@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 //custom
 import { FrameworkBodyComponent } from './framework-body/framework-body.component';
 import { ContentComponent } from './content/content.component';
+import { MenuComponent } from './menu/menu.component';
+import { TitleBarComponent } from './title-bar/title-bar.component';
 
 @NgModule({
   imports: [
@@ -11,6 +13,8 @@ import { ContentComponent } from './content/content.component';
   declarations: [
 	  FrameworkBodyComponent
 	  ,ContentComponent
+	  ,TitleBarComponent
+	  ,MenuComponent
   ]
   ,exports: [
 	  FrameworkBodyComponent
