@@ -5,6 +5,7 @@ import { FrameworkBodyComponent } from './framework-body/framework-body.componen
 import { ContentComponent } from './content/content.component';
 import { MenuComponent } from './menu/menu.component';
 import { TitleBarComponent } from './title-bar/title-bar.component';
+import { FrameworkConfigService } from './services/framework-config.service';
 
 @NgModule({
   imports: [
@@ -15,6 +16,9 @@ import { TitleBarComponent } from './title-bar/title-bar.component';
 	  ,ContentComponent
 	  ,TitleBarComponent
 	  ,MenuComponent
+  ]
+  ,providers: [
+    FrameworkConfigService
   ]
   ,exports: [
 	  FrameworkBodyComponent
