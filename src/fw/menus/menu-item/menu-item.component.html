@@ -1,6 +1,7 @@
 <div class="menu-item"
   [routerLink]="item.route" routerLinkActive="active-link"
-  [ngClass]="{'vertical-menu': menuService.isVertical}" >
+  [ngClass]="{'vertical-menu': menuService.isVertical}"
+  (click)="menuService.showingLeftMenu=false" >
   <span class="glyphicon {{ item.icon }}"></span>
   <span>{{ item.text }}</span>
 </div>

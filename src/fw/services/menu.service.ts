@@ -9,12 +9,13 @@ import { MenuItem } from "../menus/menu-item/menu-item.iface";
 export class MenuService{
 
 	items: Array<MenuItem>;
-	isVertical = true;
+	isVertical = false;
 	showingLeftMenu = false;
 
 	constructor(){}
 
 	toggleLeftMenu(){
+		this.isVertical = true;
 		this.showingLeftMenu = !this.showingLeftMenu;
 	}
 
