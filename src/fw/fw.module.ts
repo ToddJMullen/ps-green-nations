@@ -15,6 +15,7 @@ import { ScreenLarge } from './directives/screen-large.directive';
 import { ScreenSmall } from './directives/screen-small.directive';
 import { MenuService } from './services/menu.service';
 import { MenuItemComponent } from './menus/menu-item/menu-item.component';
+import { PopupMenuComponent } from './popup-menu/popup-menu.component';
 
 @NgModule({
   imports: [
@@ -31,6 +32,7 @@ import { MenuItemComponent } from './menus/menu-item/menu-item.component';
     ,ScreenLarge
     ,ScreenSmall
     ,MenuItemComponent
+    ,PopupMenuComponent
   ]
   ,providers: [
     FrameworkConfigService
