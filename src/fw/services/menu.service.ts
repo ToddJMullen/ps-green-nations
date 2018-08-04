@@ -10,7 +10,12 @@ export class MenuService{
 
 	items: Array<MenuItem>;
 	isVertical = true;
+	showingLeftMenu = false;
 
 	constructor(){}
+
+	toggleLeftMenu(){
+		this.showingLeftMenu = !this.showingLeftMenu;
+	}
 
 }
