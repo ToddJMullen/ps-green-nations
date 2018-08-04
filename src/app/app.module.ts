@@ -11,13 +11,19 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CountriesComponent } from './countries/countries.component';
 import { SettingsComponent } from './settings/settings.component';
 import { appRoutes } from './app.routing';
+import { CountyDetailComponent } from './county-detail/county-detail.component';
+import { CountyListComponent } from './county-list/county-list.component';
+import { CountyMaintComponent } from './county-maint/county-maint.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     CountriesComponent,
-    SettingsComponent
+    SettingsComponent,
+    CountyDetailComponent,
+    CountyListComponent,
+    CountyMaintComponent
   ],
   imports: [
     BrowserModule
