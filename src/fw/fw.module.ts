@@ -12,6 +12,7 @@ import { ScreenService } from './services/screen.service';
 import { ScreenLarge } from './directives/screen-large.directive';
 import { ScreenSmall } from './directives/screen-small.directive';
 import { MenuService } from './services/menu.service';
+import { MenuItemComponent } from './menus/menu-item/menu-item.component';
 
 @NgModule({
   imports: [
@@ -26,6 +27,7 @@ import { MenuService } from './services/menu.service';
     ,StatusBarComponent
     ,ScreenLarge
     ,ScreenSmall
+    ,MenuItemComponent
   ]
   ,providers: [
     FrameworkConfigService
@@ -34,7 +36,6 @@ import { MenuService } from './services/menu.service';
   ]
   ,exports: [
 	  FrameworkBodyComponent
-	//   ,ContentComponent//not needed/wanted because the <fw-content> is internal to fw???
   ]
 })
 export class FwModule { }
