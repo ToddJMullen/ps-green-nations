@@ -1,5 +1,7 @@
 <div *screenSmall class="title-bar-small user-title-bar" >
-	<span class="glyphicon glyphicon-menu-hamburger"></span>
+	<span class="glyphicon glyphicon-menu-hamburger"
+			(click)="menuService.toggleLeftMenu()"
+	></span>
 	<div class="small-image-holder">
 		<img src="assets/logo.png" class="small-image"
 				alt="Green Nations Logo">
