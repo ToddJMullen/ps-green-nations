@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+
 //custom
 import { FrameworkBodyComponent } from './framework-body/framework-body.component';
 import { ContentComponent } from './content/content.component';
@@ -17,6 +19,7 @@ import { MenuItemComponent } from './menus/menu-item/menu-item.component';
 @NgModule({
   imports: [
     CommonModule
+    ,RouterModule
   ],
   declarations: [
 	  FrameworkBodyComponent
