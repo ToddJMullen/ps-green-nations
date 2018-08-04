@@ -1,12 +1,7 @@
 import { Injectable } from "@angular/core";
 
+import { MenuItem } from "../interfaces/menu-item.iface";
 
-export interface MenuItem{
-	text: string
-	,icon: string//will be glyphicon name
-	,route: string
-	,subMenu: Array<MenuItem>
-}
 
 
 
