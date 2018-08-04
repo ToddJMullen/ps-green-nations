@@ -5,5 +5,15 @@
           [ngClass]="{'vertical-menu': menuService.isVertical}">
         </fw-menu-item>
     </li>
-  </ul>
+    <li>
+      <button (click)="menuService.toggleOrientation()"
+        [ngClass]="{'horizontal': menuService.isVertical}"
+        class="btn btn-sm">
+        <span class="glyphicon glyphicon-menu-up"
+        *ngIf="menuService.isVertical"></span>
+        <span class="glyphicon glyphicon-chevron-left"
+        *ngIf="!menuService.isVertical"></span>
+      </button>
+  </li>
+</ul>
 </nav>
