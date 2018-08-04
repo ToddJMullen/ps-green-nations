@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 
-import { MenuItem } from "../interfaces/menu-item.iface";
+import { MenuItem } from "../menus/menu-item/menu-item.iface";
 
 
 
