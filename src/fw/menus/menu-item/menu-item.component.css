@@ -15,6 +15,13 @@
 	margin-left: 16px;
 	width: auto;
 }
+:host(.vertical-menu){
+	display: block;
+	margin-left: 0;
+	margin-top: 6px;
+	margin-bottom: 6px;
+	color: #7fc;
+}
 span{
 	pointer-events: none;
 }
@@ -28,11 +35,20 @@ span{
 	zoom: 1;
 	transition: all ease-in-out 200ms;
 }
+.menu-item.vertical-menu{
+	padding: 6px 7px 7px 0;
+}
 .menu-item:hover{
 	background-color: #dfd;
+}
+.menu-item.vertical-menu{
+	/* background-color: #777; */
 }
 .active-link{
 	color: #555; font-weight: 400;
 	background-color: #dfd;
 	zoom: 1.1;
+}
+.active-link.vertical-menu{
+	background-color: #3ee;
 }

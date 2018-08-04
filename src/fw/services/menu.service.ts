@@ -9,6 +9,7 @@ import { MenuItem } from "../menus/menu-item/menu-item.iface";
 export class MenuService{
 
 	items: Array<MenuItem>;
+	isVertical = true;
 
 	constructor(){}
 

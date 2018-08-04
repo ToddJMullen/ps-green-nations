@@ -3,7 +3,15 @@
 	align-items: flex-end;
 	justify-content: flex-end;
 	flex-grow: 1;
-	/* border: 1px solid black; */
+	/* border: 1px solid #7ef; */
+}
+:host(.vertical-menu){
+	display: inline-block;
+	width: 200px;
+	padding-left: 4px;
+	flex-grow: 0;
+	background-color: #555;
+	overflow: auto;
 }
 ul{
 	list-style-type: none;
