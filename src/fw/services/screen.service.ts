@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { Subject } from "rxjs/Subject";
 
 
 
@@ -19,12 +20,13 @@ export class ScreenService{
 		try {
 			window.addEventListener("resize", $resize => this.onResize($resize) );
 		} catch (error) {
-			console.error( `Faied to add window resize listener with error:`, error );			
+			console.error( `Failed to add window resize listener with error:`, error );			
 		}
 	}
 
 
 	measure(){
+		console.log("measure()");
 		try {
 			this.screenWidth	= window.innerWidth;
 			this.screenHeight	= window.innerHeight;
