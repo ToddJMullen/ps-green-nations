@@ -1,11 +1,13 @@
-import { Directive, ViewContainerRef, TemplateRef, Input } from '@angular/core';
+import { Directive, ViewContainerRef, TemplateRef, Input, OnDestroy } from '@angular/core';
 import { ScreenService } from '../services/screen.service';
+import { Subscription } from 'rxjs/Subscription';
 
 @Directive({
   selector: '[screenLarge]'
 })
-export class ScreenLarge {
+export class ScreenLarge implements OnDestroy {
 
+  screenData:Subscription;
   isInDom = false;
 
   constructor(
@@ -13,7 +15,11 @@ export class ScreenLarge {
     ,private template: TemplateRef<Object>
     ,private screenService: ScreenService
   ) {
-    screenService.resize$.subscribe( () => this.onResize() );
+     this.screenData = screenService.resize$.subscribe( () => this.onResize() );
+  }
+
+  ngOnDestroy(){
+    this.screenData.unsubscribe();
   }
 
   @Input()
@@ -26,14 +32,14 @@ export class ScreenLarge {
       this.viewContainer.createEmbeddedView( this.template );
       //set flag that the elements are on the DOM
       this.isInDom = true;
-      console.log("Added to DOM:", this.template );
+      // console.log("Added to DOM:", this.template );
     }
     else if( !isLarge && this.isInDom ){
       //if below screen threshold and it's in the DOM, take it out
       this.viewContainer.clear();
       //update the DOM flag
       this.isInDom = false;
-      console.log("Removed from DOM:", this.template );
+      // console.log("Removed from DOM:", this.template );
     }
   }
 

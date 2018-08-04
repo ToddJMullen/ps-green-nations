@@ -26,7 +26,7 @@ export class ScreenService{
 
 
 	measure(){
-		console.log("measure()");
+		// console.log("measure()");
 		try {
 			this.screenWidth	= window.innerWidth;
 			this.screenHeight	= window.innerHeight;
