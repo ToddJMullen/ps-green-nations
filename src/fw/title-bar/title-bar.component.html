@@ -1,4 +1,16 @@
-<div class="title-bar user-title-bar">
+<div class="title-bar-small user-title-bar"
+	*ngIf="!screenService.isLarge()">
+	<span class="glyphicon glyphicon-menu-hamburger"></span>
+	<div class="small-image-holder">
+		<img src="assets/logo.png" class="small-image"
+				alt="Green Nations Logo">
+	</div>
+	<span class="glyphicon glyphicon-option-vertical"></span>
+</div>
+
+
+<div class="title-bar user-title-bar"
+	*ngIf="screenService.isLarge()">
 	<img src="assets/logo.png"
 		 alt="Green Nations Logo">
 	<div class="menu-area">
