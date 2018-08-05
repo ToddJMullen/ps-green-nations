@@ -12,7 +12,7 @@ import { MenuService } from '../../services/menu.service';
   selector: 'fw-menu-item',
   templateUrl: './menu-item.component.html',
   styleUrls: ['./menu-item.component.css']
-  ,animations: [
+  ,animations: [//removed in markup bc of causing irregular/poor behavior
     trigger("visibilityChanged", [//name of the animation defined
       transition(":enter", [// void => * alias, ie DNE => whatever state
         style({opacity: 0})//start invisible

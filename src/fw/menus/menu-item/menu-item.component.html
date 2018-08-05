@@ -1,6 +1,7 @@
 <div class="menu-item"
   [ngClass]="{'vertical-menu': menuService.isVertical,'active-link': isActiveRoute}"
-  (click)="menuService.showingLeftMenu=false" >
+  >
+  <!-- (click)="menuService.showingLeftMenu=false" -->
   <span class="glyphicon {{ item.icon }}"></span>
   <span>{{ item.text }}</span>
 
@@ -15,6 +16,7 @@
 
 </div>
 
+<!-- @visibilityChanged << causing irregular/poor behavior-->
 <fw-popup-menu *ngIf="mouseInPopup || mouseInItem" 
   [menu]="item.subMenu"
   [ngClass]="{'vertical-menu': menuService.isVertical}"
