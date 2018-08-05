@@ -15,7 +15,7 @@
 
 </div>
 
-<fw-popup-menu *ngIf="mouseInPopup || mouseInItem"
+<fw-popup-menu *ngIf="mouseInPopup || mouseInItem" 
   [menu]="item.subMenu"
   [ngClass]="{'vertical-menu': menuService.isVertical}"
   (mouseenter)="onPopupMouseEnter($event)"

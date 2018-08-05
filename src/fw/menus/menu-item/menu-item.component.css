@@ -40,7 +40,7 @@ span{
 }
 .menu-item{
 	padding: 10px 10px 10px 0;
-	zoom: 1;
+	/* zoom: 1; */
 	transition: all ease-in-out 200ms;
 }
 .menu-item.vertical-menu{
@@ -55,7 +55,7 @@ span{
 .active-link{
 	color: #555; font-weight: 400;
 	background-color: #dfd;
-	zoom: 1.1;
+	/* zoom: 1.1; */
 }
 .active-link.vertical-menu{
 	background-color: #3ee;

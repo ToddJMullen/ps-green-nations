@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, HostBinding, HostListener
         ,Renderer, ElementRef, style, animate } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
-import { trigger, transition } from '@angular/core/src/animation/dsl';
+import { trigger, transition } from '@angular/core';
 
 // import { MenuItem } from '../../services/menu.service';//og location
 //I chose the 'separate file' solution
@@ -19,7 +19,7 @@ import { MenuService } from '../../services/menu.service';
         ,animate( 250, style({opacity: 1}) )//over 250ms fade in
       ])
       ,transition(":leave", [// * => void alias, is whatever state => DNE
-        animate(100, style({opacity: 0}))//100ms fade out
+        animate( 100, style({opacity: 0}))//100ms fade out
       ])
     ])
   ]
