@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, HostBinding, HostListener } from '@angular/core';
+import { Component, OnInit, Input, HostBinding, HostListener, Renderer, ElementRef } from '@angular/core';
 
 // import { MenuItem } from '../../services/menu.service';//og location
 //I chose the 'separate file' solution
@@ -29,9 +29,34 @@ export class MenuItemComponent implements OnInit {
   constructor(
     private router:Router
     ,private menuService: MenuService
+    ,private renderer: Renderer
+    ,private elem: ElementRef
   ) { }
 
   ngOnInit() {
+  }
+
+  /**
+   * The click handler deals with the vertical menu interactions
+   * @param e Menu click event 
+   */
+  @HostListener("click", ["$event"])
+  onClick(e):void{
+    e.stopPropagation();
+    if( this.item.subMenu ){
+      if( this.menuService.isVertical ){//then toggle mouseInPopup to toggle visibility
+        this.mouseInPopup = !this.mouseInPopup;
+      }
+    }
+    else if( this.item.route ){
+      //create artificial mouseleave event
+      let newEvent = new MouseEvent("mouseleave", {bubbles: true});
+      this.renderer.invokeElementMethod(//artificially dispatch it from 'this'
+        this.elem.nativeElement, 'dispatchEvent', [newEvent]
+      );
+      //update the application & route
+      this.router.navigate(["/" + this.item.route]);
+    }
   }
 
   onPopupMouseEnter(event){
