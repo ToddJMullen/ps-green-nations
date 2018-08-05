@@ -3,7 +3,18 @@
   (click)="menuService.showingLeftMenu=false" >
   <span class="glyphicon {{ item.icon }}"></span>
   <span>{{ item.text }}</span>
+
+  <span *ngIf="item.subMenu && !menuService.isVertical && !parentIsPopup"
+        class="glyphicon glyphicon-menu-down"></span>
+  <span *ngIf="item.subMenu && !menuService.isVertical && parentIsPopup"
+        class="glyphicon glyphicon-menu-right"></span>
+  <span *ngIf="item.subMenu && menuService.isVertical && !(mouseInPopup || mouseInItem)"
+        class="glyphicon glyphicon-menu-right"></span>
+  <span *ngIf="item.subMenu && menuService.isVertical && (mouseInPopup || mouseInItem)"
+        class="glyphicon glyphicon-menu-down"></span>
+
 </div>
+
 <fw-popup-menu *ngIf="mouseInPopup || mouseInItem"
   [menu]="item.subMenu"
   [ngClass]="{'vertical-menu': menuService.isVertical}"

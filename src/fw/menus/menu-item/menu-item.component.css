@@ -33,6 +33,11 @@ span{
 	font-size: 14px;
 	margin-right: 4px; margin-left: 8px;
 }
+.glyphicon-menu-right
+,.glyphicon-menu-down
+,.glyphicon-menu-left{
+	float: right;
+}
 .menu-item{
 	padding: 10px 10px 10px 0;
 	zoom: 1;

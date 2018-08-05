@@ -1,10 +1,10 @@
 import { Component, OnInit, Input, HostBinding, HostListener, Renderer, ElementRef } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 // import { MenuItem } from '../../services/menu.service';//og location
 //I chose the 'separate file' solution
 import { MenuItem } from './menu-item.iface';
 import { MenuService } from '../../services/menu.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'fw-menu-item',
@@ -33,7 +33,20 @@ export class MenuItemComponent implements OnInit {
     ,private elem: ElementRef
   ) { }
 
-  ngOnInit() {
+
+  ngOnInit(){//when the instance is created, we need to check its route agains the current uri
+    this.checkActiveRoute( this.router.url );
+    //we also need to setup a watch for router changes
+    this.router.events.subscribe( event => {
+      if( event instanceof NavigationEnd ){//we want to know when the router finished a change
+        this.checkActiveRoute( event.url );//so that we can recompare the path
+        // console.log(`Navigation event to ${event.url}, is active: ${this.isActiveRoute}`);
+      }
+    });
+  }
+
+  checkActiveRoute( route ){
+    this.isActiveRoute = route == ("/" + this.item.route);
   }
 
   /**
