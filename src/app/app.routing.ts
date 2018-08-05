@@ -8,12 +8,26 @@ import { CountryMaintComponent } from "./country-maint/country-maint.component";
 
 
 export const appRoutes: Route[] = [
-	{ path: 'dashboard', component: DashboardComponent }
-	,{ path: 'settings', component: SettingsComponent }
-	,{ path: 'country-list/:count', component: CountryListComponent }
-	,{ path: 'country-detail/:country', component: CountryDetailComponent }
-	,{ path: 'country-maint', component: CountryMaintComponent }
-	//remember, order matters - first match wins
-	,{path: "", component: DashboardComponent }
-	,{path: "**", component: DashboardComponent }
-]
+	{path: "signin", component: SignInComponent}
+	,{path: "authenticated", component: AuthenticatedUserComponent
+		,children: [
+			{ path: 'dashboard', component: DashboardComponent }
+			,{ path: 'settings', component: SettingsComponent }
+			,{ path: 'country-list/:count', component: CountryListComponent }
+			,{ path: 'country-detail/:country', component: CountryDetailComponent }
+			,{ path: 'country-maint', component: CountryMaintComponent }
+	]}
+	,{path: "", component: SignInComponent }
+	,{path: "**", component: SignInComponent }
+];
+
+// export const appRoutes: Route[] = [
+// 	{ path: 'dashboard', component: DashboardComponent }
+// 	,{ path: 'settings', component: SettingsComponent }
+// 	,{ path: 'country-list/:count', component: CountryListComponent }
+// 	,{ path: 'country-detail/:country', component: CountryDetailComponent }
+// 	,{ path: 'country-maint', component: CountryMaintComponent }
+// 	//remember, order matters - first match wins
+// 	,{path: "", component: DashboardComponent }
+// 	,{path: "**", component: DashboardComponent }
+// ]
