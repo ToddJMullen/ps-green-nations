@@ -10,18 +10,18 @@ import { FwModule } from '../fw/fw.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SettingsComponent } from './settings/settings.component';
 import { appRoutes } from './app.routing';
-import { CountyDetailComponent } from './county-detail/county-detail.component';
-import { CountyListComponent } from './county-list/county-list.component';
-import { CountyMaintComponent } from './county-maint/county-maint.component';
+import { CountryMaintComponent } from './country-maint/country-maint.component';
+import { CountryListComponent } from './country-list/country-list.component';
+import { CountryDetailComponent } from './country-detail/country-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     SettingsComponent,
-    CountyDetailComponent,
-    CountyListComponent,
-    CountyMaintComponent
+    CountryMaintComponent,
+    CountryListComponent,
+    CountryDetailComponent
   ],
   imports: [
     BrowserModule
