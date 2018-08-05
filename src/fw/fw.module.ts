@@ -17,11 +17,13 @@ import { MenuService } from './services/menu.service';
 import { MenuItemComponent } from './menus/menu-item/menu-item.component';
 import { PopupMenuComponent } from './popup-menu/popup-menu.component';
 import { SignInComponent } from './users/sign-in/sign-in.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule
     ,RouterModule
+    ,FormsModule
   ],
   declarations: [
 	  FrameworkBodyComponent
@@ -42,7 +44,8 @@ import { SignInComponent } from './users/sign-in/sign-in.component';
     ,MenuService
   ]
   ,exports: [
-	  FrameworkBodyComponent
+    FrameworkBodyComponent
+    ,SignInComponent
   ]
 })
 export class FwModule { }

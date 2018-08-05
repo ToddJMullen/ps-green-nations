@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignInComponent implements OnInit {
 
+  submitting    = false;
+  formError     = false;
+  
+
   constructor() { }
 
   ngOnInit() {
