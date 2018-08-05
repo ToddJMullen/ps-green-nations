@@ -1,3 +1,5 @@
-<p>
-  popup-menu works!
-</p>
+<li *ngFor="let item of menu">
+  <fw-menu-item [item]="item" class="in-popup"
+        [ngClass]="{'vertical-menu': menuService.isVertical}">
+  </fw-menu-item>
+</li>

@@ -5,3 +5,14 @@
   <span class="glyphicon {{ item.icon }}"></span>
   <span>{{ item.text }}</span>
 </div>
+<fw-popup-menu *ngIf="mouseInPopup || mouseInItem"
+  [menu]="item.subMenu"
+  [ngClass]="{'vertical-menu': menuService.isVertical}"
+  (mouseenter)="onPopupMouseEnter($event)"
+  (mouseleave)="onPopupMouseLeave($event)"
+  [style.left.px]="popupLeft"
+  [style.top.px]="popupTop"
+  >
+  <!-- mouse in & out fires on child elements also (viz the spans in the menu-item)
+        which would cause conflicting event data -->
+</fw-popup-menu>
