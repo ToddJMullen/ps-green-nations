@@ -6,11 +6,14 @@ import { CountryListComponent } from "./country-list/country-list.component";
 import { CountryDetailComponent } from "./country-detail/country-detail.component";
 import { CountryMaintComponent } from "./country-maint/country-maint.component";
 import { AuthenticatedUserComponent } from "./authenticated-user/authenticated-user.component";
+//fw module
 import { SignInComponent } from "../fw/users/sign-in/sign-in.component";
+import { RegisterUserComponent } from "../fw/users/register-user/register-user.component";
 
 
 export const appRoutes: Route[] = [
 	{path: "signin", component: SignInComponent}
+	,{path: "register", component: RegisterUserComponent }
 	,{path: "authenticated", component: AuthenticatedUserComponent
 		,children: [
 			{ path: 'dashboard', component: DashboardComponent }
