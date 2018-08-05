@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/Observable";
+import { delay } from "rxjs/operators/delay";
 import "rxjs/add/observable/of";
 
 import { FwUserApi } from "../../fw/users/user-api";
@@ -13,6 +14,6 @@ export class UserService implements FwUserApi{
 	signIn( username:string, pwd:string, rememberMe:boolean ): Observable<any>{
 		console.log(`UserService::signIn(): ${username}, ${pwd}, ${rememberMe}`)
 		this.isAuthenticate = true;
-		return Observable.of({});
+		return Observable.of({}).pipe( delay(1000) );
 	}
 }
