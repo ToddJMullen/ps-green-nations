@@ -1,5 +1,7 @@
-import { Component, OnInit, Input, HostBinding, HostListener, Renderer, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, HostBinding, HostListener
+        ,Renderer, ElementRef, style, animate } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
+import { trigger, transition } from '@angular/core/src/animation/dsl';
 
 // import { MenuItem } from '../../services/menu.service';//og location
 //I chose the 'separate file' solution
@@ -10,6 +12,17 @@ import { MenuService } from '../../services/menu.service';
   selector: 'fw-menu-item',
   templateUrl: './menu-item.component.html',
   styleUrls: ['./menu-item.component.css']
+  ,animations: [
+    trigger("visibilityChanged", [//name of the animation defined
+      transition(":enter", [// void => * alias, ie DNE => whatever state
+        style({opacity: 0})//start invisible
+        ,animate( 250, style({opacity: 1}) )//over 250ms fade in
+      ])
+      ,transition(":leave", [// * => void alias, is whatever state => DNE
+        animate(100, style({opacity: 0}))//100ms fade out
+      ])
+    ])
+  ]
 })
 export class MenuItemComponent implements OnInit {
 
