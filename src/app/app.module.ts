@@ -16,6 +16,7 @@ import { CountryDetailComponent } from './country-detail/country-detail.componen
 import { AuthenticatedUserComponent } from './authenticated-user/authenticated-user.component';
 import { UserService } from './services/user.service';
 import { FwUserApi } from '../fw/users/user-api';
+import { AuthGuard } from './services/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { FwUserApi } from '../fw/users/user-api';
   providers: [
     UserService
     ,{provide: FwUserApi, useExisting: UserService}
+    ,AuthGuard
   ],
   bootstrap: [AppComponent]
 })
