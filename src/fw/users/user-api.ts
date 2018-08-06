@@ -6,7 +6,7 @@ export abstract class FwUserApi{
 	// The API should be implemented by the app and injected back into the Framework
 	signIn: (username:string, password: string, rememberMe: boolean) => Observable<any>;
 	// register
-	// signOut
+	signOut: () => Observable<any>;
 	//resetPwd
 	//etc...
 }
