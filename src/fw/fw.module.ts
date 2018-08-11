@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //custom
 import { FrameworkBodyComponent } from './framework-body/framework-body.component';
@@ -17,14 +18,16 @@ import { MenuService } from './services/menu.service';
 import { MenuItemComponent } from './menus/menu-item/menu-item.component';
 import { PopupMenuComponent } from './popup-menu/popup-menu.component';
 import { SignInComponent } from './users/sign-in/sign-in.component';
-import { FormsModule } from '@angular/forms';
 import { RegisterUserComponent } from './users/register-user/register-user.component';
+import { DynamicFormComponent } from './dynamic-forms/dynamic-form/dynamic-form.component';
+import { DynamicFieldComponent } from './dynamic-forms/dynamic-field/dynamic-field.component';
 
 @NgModule({
   imports: [
     CommonModule
     ,RouterModule
     ,FormsModule
+    ,ReactiveFormsModule
   ],
   declarations: [
 	  FrameworkBodyComponent
@@ -39,6 +42,8 @@ import { RegisterUserComponent } from './users/register-user/register-user.compo
     ,PopupMenuComponent
     ,SignInComponent
     ,RegisterUserComponent
+    ,DynamicFormComponent
+    ,DynamicFieldComponent
   ]
   ,providers: [
     FrameworkConfigService
@@ -49,6 +54,8 @@ import { RegisterUserComponent } from './users/register-user/register-user.compo
     FrameworkBodyComponent
     ,SignInComponent
     ,RegisterUserComponent
+    ,DynamicFormComponent
+    // ,DynamicFieldComponent//I don't think this is intended to be used outside the DynamicForm
   ]
 })
 export class FwModule { }
