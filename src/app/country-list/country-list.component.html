@@ -1,3 +1,5 @@
-<p>
-  country-list works!
-</p>
+<fw-panel *ngFor="let country of countries; let idx = index">
+  <app-country-panel [index]="idx + 1"
+    [country]="country">
+  </app-country-panel>
+</fw-panel>
