@@ -18,6 +18,7 @@ import { UserService } from './services/user.service';
 import { FwUserApi } from '../fw/users/user-api';
 import { AuthGuard } from './services/auth-guard.service';
 import { AppDataService } from './services/app-data.service';
+import { CountryPanelComponent } from './panels/country-panel/country-panel.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AppDataService } from './services/app-data.service';
     CountryMaintComponent,
     CountryListComponent,
     CountryDetailComponent,
-    AuthenticatedUserComponent
+    AuthenticatedUserComponent,
+    CountryPanelComponent
   ],
   imports: [
     BrowserModule
