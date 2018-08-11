@@ -13,6 +13,7 @@ export class CountryDetailComponent implements OnInit {
 
   country:Country;
   operation:string;
+  errorMessage: string;
   countryFieldDataAry: Array<FieldDefinition> = [
     {key: "id"
       ,type: "number"
@@ -31,6 +32,7 @@ export class CountryDetailComponent implements OnInit {
       ,required: true
     }
   ]
+
 
   constructor(
     private router: Router
@@ -52,6 +54,32 @@ export class CountryDetailComponent implements OnInit {
         this.country = country;
       });
     }
+  }
+
+  createCountry( country:Country ){
+    this.errorMessage = null;
+    this.appData
+    .createCountry(country)
+    .subscribe(
+      created => this.router.navigate(["/authenticated/country-maint"])
+      ,err => {
+        this.errorMessage = "There was a problem updating the country!"
+        console.error(err);
+      }
+    );
+  }
+
+  updateCountry( country:Country ){
+    this.errorMessage = null;
+    this.appData
+    .updateCountry(country)
+    .subscribe(
+      saved => this.router.navigate(["/authenticated/country-maint"])
+      ,err => {
+        this.errorMessage = "There was a problem updating the country!"
+        console.error(err);
+      }
+    );
   }
 
 }

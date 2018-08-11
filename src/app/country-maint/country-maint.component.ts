@@ -31,8 +31,35 @@ export class CountryMaintComponent implements OnInit {
     this.router.navigate(["/authenticated/country-detail", id, "details" ]);
   }
 
+  createCountry():void{
+    this.router.navigate(["/authenticated/country-detail",0,"create"])
+  }
+
   editCountry( id:number ):void {
     this.router.navigate(["/authenticated/country-detail", id, "edit"]);
+  }
+
+  deleteCountryQuestion( id:number ):void{
+    this.deleteId = id;
+  }
+
+  cancelDelete(){
+    this.deleteId = null;
+    this.isDeleting = false;
+  }
+
+
+  deleteCountry( id:number ):void{
+    this.isDeleting = true;
+    this.dataService
+      .deleteCountry(id)
+      .subscribe(
+        rsp => this.cancelDelete()
+        ,err => {
+          this.deleteError = err;
+          this.isDeleting = false;
+        }
+      );
   }
 
 }
