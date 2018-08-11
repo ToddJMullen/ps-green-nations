@@ -10,6 +10,8 @@ import { delay } from "rxjs/operators/delay";
 @Injectable()
 export class AppDataService {
 
+  TIME_DELAY = 1000;
+
   private countries : Array<Country> = [
     { id: 1, name:"Switzerland",  epiIndex: 87.67 },
     { id: 2, name:"Luxembourg",   epiIndex: 83.29 },
@@ -38,8 +40,7 @@ export class AppDataService {
   deleteCountry(id: number) : Observable<any> {
     // return Observable.of({}).delay(2000).flatMap(x=>Observable.throw('Delete error.'));
     this.countries.splice(this.countries.findIndex(c => c.id == id), 1)
-    return Observable.of({})
-            .pipe(delay(2000));
+    return Observable.of({}).pipe(delay(this.TIME_DELAY));
   }
 
   getCountries() : Observable<any> {
@@ -54,8 +55,8 @@ export class AppDataService {
   updateCountry(updatedCountry: Country) : Observable<any> {
     var country = this.countries.find(c => c.id == updatedCountry.id);
     Object.assign(country, updatedCountry);
-    return Observable.of(country).pipe(delay(2000))
-    //return Observable.of({}).pipe(delay(2000)).flatMap(x=>Observable.throw(''));
+    return Observable.of(country).pipe(delay(this.TIME_DELAY));
+    //return Observable.of({}).pipe(delay(this.TIME_DELAY)).flatMap(x=>Observable.throw(''));
   }
   
 }

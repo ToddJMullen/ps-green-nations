@@ -80,7 +80,26 @@ export class DynamicFormComponent implements OnInit, OnChanges {
   }
 
   onCreate(){
+    this.submitted = true;
+    if( this.form.valid ){
+      this.status = "waiting";
+      this.create.emit( this.form.value );
+    }
+  }
 
+  onEdit(){
+    //reroute to the path (country id) with the edit operation
+    //eg /authenticated/country-detail/1/details
+    //changes to /authenticated/country-detail/1/edit
+    this.router.navigate(["../","edit"], {relativeTo: this.route});
+  }
+
+  onSave(){
+    this.submitted = true;
+    if( this.form.valid ){
+      this.status = "waiting";
+      this.update.emit( this.form.value );
+    }
   }
 
 
