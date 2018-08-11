@@ -58,6 +58,8 @@ import { PanelComponent } from './panels/panel/panel.component';
     ,RegisterUserComponent
     ,DynamicFormComponent
     ,PanelComponent
+    ,ScreenLarge
+    ,ScreenSmall
   ]
 })
 export class FwModule { }
