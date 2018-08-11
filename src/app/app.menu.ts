@@ -44,9 +44,9 @@ export let initialMenuItems: Array<MenuItem> = [
                 subMenu: null
             },
             {
-                text: 'Top 10',
+                text: 'Top 5',
                 icon: 'glyphicon-flag',
-                route: '/authenticated/country-list/10',
+                route: '/authenticated/country-list/5',
                 subMenu: null
             },
             {
