@@ -20,10 +20,19 @@ export class CountryMaintComponent implements OnInit {
     private dataService: AppDataService
     ,private router: Router
   ) {
-    dataService.getCountries().subscribe( countryAry => this.countries = countryAry )
+    dataService.getCountries()
+        .subscribe( countryAry => this.countries = countryAry )
    }
 
   ngOnInit() {
+  }
+
+  showCountryDetail( id:string ):void{
+    this.router.navigate(["/authenticated/country-detail", id, "details" ]);
+  }
+
+  editCountry( id:number ):void {
+    this.router.navigate(["/authenticated/country-detail", id, "edit"]);
   }
 
 }
