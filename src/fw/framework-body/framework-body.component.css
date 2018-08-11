@@ -3,3 +3,8 @@
 	position: absolute; top: 0; right: 0; bottom: 0; left: 0;
 	/* background-color: #dff; */
 }
+fw-status-bar{
+	/* this doesn't fix the moving footer, but at least it hides it without deleting it */
+	position: fixed;
+	bottom: 0;
+}
